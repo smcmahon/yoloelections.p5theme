@@ -20,3 +20,44 @@
         }
     }
 }
+
+
+.portletNavigationTree .portletContent > ul > li > a {
+    display: block;
+    background: @plone-body-bg;
+}
+.portletNavigationTree .portletContent > ul > li > a:hover {
+    background: @plone-portlet-header-bg;
+}
+.portlet nav.portletContent > ul > li a {
+    border: 1px solid transparent;
+}
+.portlet {
+    border: 1px solid transparent;
+    box-shadow: none;
+}
+
+div#translate_widget {
+    position: absolute;
+    margin-top: 5px;
+}
+.goog-te-gadget-simple {
+    border-radius: @plone-border-radius-base;
+}
+
+@media (min-width: 768px) {
+    #portal-header {
+        position: relative;
+    }
+    #portal-header #portal-logo {
+        display: block;
+        text-align: center;
+        float: none;
+        margin-top: 2em;
+    }
+    #portal-header #portal-searchbox {
+        position: absolute;
+        float: none;
+        right: 0;
+    }
+}
