@@ -39,11 +39,20 @@
 
 div#translate_widget {
     position: absolute;
+    width: 100%;
     margin-top: 5px;
+    text-align: center;
 }
 .goog-te-gadget-simple {
     border-radius: @plone-border-radius-base;
+    font-size: @plone-font-size-base !important;
+    padding: 6px 12px !important;
 }
+
+.plone-nav > li > a {
+      font-size: ceil((@plone-font-size-base * 1.13));;
+}
+
 
 @media (min-width: 768px) {
     #portal-header {
@@ -51,9 +60,10 @@ div#translate_widget {
     }
     #portal-header #portal-logo {
         display: block;
-        text-align: center;
+        text-align: left;
         float: none;
         margin-top: 2em;
+        margin-left: 1em;
     }
     #portal-header #portal-searchbox {
         position: absolute;
