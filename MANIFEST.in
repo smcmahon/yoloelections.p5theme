@@ -1,0 +1,4 @@
+graft src/yoloelections
+graft docs
+include *.rst
+global-exclude *.pyc

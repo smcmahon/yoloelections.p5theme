@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layers>
+  <layer
+      name="yoloelections.p5theme"
+      interface="yoloelections.p5theme.interfaces.IYoloelectionsP5ThemeLayer"
+      />
+</layers>
