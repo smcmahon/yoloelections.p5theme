@@ -1,0 +1,6 @@
+[report]
+include =
+    src/yoloelections/*
+omit =
+    */test*
+    */upgrades/*

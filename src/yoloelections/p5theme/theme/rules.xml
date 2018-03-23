@@ -108,7 +108,8 @@
     </xsl:for-each>
 </after>
 <replace css:content="#portal-logo img">
-    <img src="banner.png" alt="Yolo Elections" width="692" height="121"><xsl:attribute name="src"><xsl:value-of select='$static_base_url' />banner.png</xsl:attribute></img>
+    <img src="banner.png" id="banner" alt="Yolo Elections" width="692" height="121"><xsl:attribute name="src"><xsl:value-of select='$static_base_url' />banner.png</xsl:attribute></img>
+    <img src="phone_banner.png" id="phone_banner" alt="Yolo Elections" width="333" height="164"><xsl:attribute name="src"><xsl:value-of select='$static_base_url' />phone_banner.png</xsl:attribute></img>
 </replace>
 <before css:content="#portal-searchbox">
     <div id="translate_widget"><div id="google_translate_element"></div><script type="text/javascript">

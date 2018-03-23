@@ -99,6 +99,13 @@ div#translate_widget {
     display: inline;
     margin-right: 1em;
 }
+#banner {
+    max-width: 74.73002159827213%;
+    height: auto;
+}
+#phone_banner {
+    display: none;
+}
 
 @media (min-width: 768px) {
     #portal-header {
@@ -115,5 +122,33 @@ div#translate_widget {
         position: absolute;
         float: none;
         right: 0;
+    }
+}
+@media (max-width: @plone-screen-sm-min) {
+    #sidebar {
+        display: none;
+    }
+}
+@media (max-width: @plone-screen-xs-min) {
+    div#translate_widget {
+        position: relative;
+    }
+    #portal-header #portal-searchbox {
+        padding-top: 0;
+        width: 85%;
+        position: relative;
+        margin: 0.5em auto;
+    }
+    #portal-header .portletStaticText {
+        margin-top: 0.5em;
+    }
+    #banner {
+        display: none;
+    }
+    #phone_banner {
+        display: block;
+    }
+    h1, h2, h3, h4, h5, h6, .documentDescription {
+        text-align: center;
     }
 }
