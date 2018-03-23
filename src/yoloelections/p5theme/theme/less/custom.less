@@ -22,6 +22,11 @@
 }
 
 
+.portlet .portletContent > ul > li a:before,
+.portletNavigationTree a {
+    color: @ye_base;
+    font-weight: 500;
+}
 .portletNavigationTree .portletContent > ul > li > a {
     display: block;
     background: @plone-body-bg;
@@ -35,6 +40,9 @@
 .portlet {
     border: 1px solid transparent;
     box-shadow: none;
+}
+.portletNavigationTree .portletHeader {
+    background: @plone-body-bg;
 }
 
 div#translate_widget {
@@ -53,6 +61,44 @@ div#translate_widget {
       font-size: ceil((@plone-font-size-base * 1.13));;
 }
 
+#portal-footer .portletWrapper {
+    display: block;
+    vertical-align: top;
+}
+#portal-footer-wrapper p {
+    border-bottom: none;
+}
+#portal-footer .portletWrapper:nth-of-type(1),
+#portal-footer .portletWrapper:nth-of-type(3) {
+    width: 40%;
+    display: inline-block;
+    border: none;
+    padding-top: 1em;
+}
+#yolo-logo {
+    display: inline-block;
+    width: 19%;
+}
+#footer-nav {
+    border-top: 1px solid #cacbda;
+    margin: 1em 0;
+    padding: 1em 0 0;
+}
+#footer-nav li {
+    display: inline-block;
+    padding: 0 0.5em;
+}
+#portal-footer-wrapper a {
+    color: @plone-gray-lighter;
+}
+.actions-site_actions {
+    text-align: right;
+    margin: 1em 0;
+}
+.actions-site_actions li {
+    display: inline;
+    margin-right: 1em;
+}
 
 @media (min-width: 768px) {
     #portal-header {

@@ -108,7 +108,7 @@
     </xsl:for-each>
 </after>
 <replace css:content="#portal-logo img">
-    <img src="banner.png" alt="Yolo Elections" width="692" height="121"><xsl:attribute name="src"><xsl:value-of select='$static_base_url' />/banner.png</xsl:attribute></img>
+    <img src="banner.png" alt="Yolo Elections" width="692" height="121"><xsl:attribute name="src"><xsl:value-of select='$static_base_url' />banner.png</xsl:attribute></img>
 </replace>
 <before css:content="#portal-searchbox">
     <div id="translate_widget"><div id="google_translate_element"></div><script type="text/javascript">
@@ -118,5 +118,17 @@
     </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></div>
 </before>
 
+<after content="//footer//div[@class='portletWrapper'][1]">
+    <div id="yolo-logo"><img src="yolo_logo.png" alt="Yolo Elections" width="126" height="126"><xsl:attribute name="src"><xsl:value-of select='$static_base_url' />yolo_logo.png</xsl:attribute></img></div>
+</after>
+<after content="//footer//div[@class='portletWrapper'][2]">
+    <ul id="footer-nav">
+        <xsl:for-each select="//ul[@id='portal-globalnav']/li">
+            <xsl:copy-of select="." />
+        </xsl:for-each>
+    </ul>
+</after>
+<replace css:theme-children="#site-actions .row" css:content-children=".portletActions" method="raw" />
+<drop css:content=".portletActions" />
 
 </rules>
