@@ -125,11 +125,33 @@ div#translate_widget {
     }
 }
 @media (max-width: @plone-screen-sm-min) {
-    #sidebar {
-        display: none;
+    img {
+        max-width: auto;
+        height: auto;
+    }
+    .plone-navbar-nav {
+        float: none;
+        text-align: center;
+    }
+    .plone-navbar-nav > li {
+        float: none;
+        display: inline-block;
     }
 }
 @media (max-width: @plone-screen-xs-min) {
+    .plone-navbar-nav {
+        float: none;
+        text-align: center;
+    }
+    .plone-navbar-nav > li {
+        float: none;
+        display: block;
+    }
+    #portal-breadcrumbs,
+    #sidebar,
+    #banner {
+        display: none;
+    }
     div#translate_widget {
         position: relative;
     }
@@ -141,9 +163,6 @@ div#translate_widget {
     }
     #portal-header .portletStaticText {
         margin-top: 0.5em;
-    }
-    #banner {
-        display: none;
     }
     #phone_banner {
         display: block;
@@ -157,5 +176,7 @@ div#translate_widget {
         display: block;
         margin-bottom: 1em;
     }
-
+    .actions-site_actions {
+        text-align: center;
+    }
 }
