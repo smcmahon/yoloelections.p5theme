@@ -113,17 +113,63 @@ div#translate_widget {
     }
     #portal-header #portal-logo {
         display: block;
-        text-align: left;
+        text-align: center;
         float: none;
         margin-top: 2em;
-        margin-left: 1em;
+        margin-left: 0;
     }
     #portal-header #portal-searchbox {
         position: absolute;
         float: none;
         right: 0;
     }
+    .plone-navbar-nav {
+        float: none;
+        text-align: center;
+    }
+    .plone-navbar-nav li {
+        float: none;
+        text-align: center;
+        display: inline-block;
+    }
 }
+
+body.section-front-page {
+    #portal-breadcrumbs,
+    .documentFirstHeading {
+        display: none;
+    }
+    #parent-fieldname-text {
+        text-align: center;
+    }
+    hr {
+        border-top: 33px solid #424579;
+        position: relative;
+        left: -100%;
+        width: 300%;
+    }
+    hr:nth-of-type(1) {
+        border-color: #0e125c;
+    }
+    #content-core #parent-fieldname-text > table {
+        display: inline-block;
+        width: 20%;
+        vertical-align: top;
+        padding: 0 2em;
+        border: none;
+        background-color: transparent;
+        td {
+            text-align: center;
+            border: none;
+            background-color: transparent;
+        }
+        td a:hover {
+            border: none;
+        }
+    } // #content-core #parent-fieldname-text > table
+} // body.section-front-page
+
+
 @media (max-width: @plone-screen-sm-min) {
     img {
         max-width: auto;
