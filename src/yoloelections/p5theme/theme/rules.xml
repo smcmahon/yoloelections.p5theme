@@ -79,14 +79,16 @@
   </rules>
 
   <!-- Right column -->
-  <rules css:if-content="#portal-column-two">
-    <replace css:theme="#column2-container">
-        <div id="sidebar" class="col-xs-6 col-sm-3 sidebar-offcanvas" role="complementary">
-          <aside id="portal-column-two">
-              <xsl:copy-of css:select="#portal-column-two > *" />
-          </aside>
-        </div>
-    </replace>
+  <rules css:if-not-content="body.section-front-page">
+    <rules css:if-content="#portal-column-two">
+      <replace css:theme="#column2-container">
+          <div id="sidebar" class="col-xs-6 col-sm-3 sidebar-offcanvas" role="complementary">
+            <aside id="portal-column-two">
+                <xsl:copy-of css:select="#portal-column-two > *" />
+            </aside>
+          </div>
+      </replace>
+    </rules>
   </rules>
 
   <!-- Content header -->
@@ -103,9 +105,7 @@
 <drop css:content="#portal-anontools" />
 <drop css:content="div.searchSection" />
 <after css:content-children="#portal-searchbox">
-    <xsl:for-each select="//div[@class='portletStaticText portlet-static-about-us-contact-us']">
-        <xsl:copy-of select="." />
-    </xsl:for-each>
+    <xsl:copy-of select="//div[@class='portletStaticText portlet-static-about-us-contact-us']" />
 </after>
 <replace css:content="#portal-logo img">
     <img src="banner.png" id="banner" alt="Yolo Elections" width="692" height="121"><xsl:attribute name="src"><xsl:value-of select='$static_base_url' />banner.png</xsl:attribute></img>
@@ -132,6 +132,11 @@
 <replace css:theme-children="#site-actions .row" css:content-children=".portletActions" method="raw" />
 <drop css:content=".portletActions" />
 
+<after css:content-children="body.section-front-page #content-core">
+    <div>
+        <xsl:copy-of select="//*[@id='portal-column-two']" />
+    </div>
+</after>
 
 
 </rules>
