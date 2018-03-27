@@ -184,7 +184,7 @@ body.section-front-page {
         display: inline-block;
         width: 20%;
         vertical-align: top;
-        padding: 0 2em;
+        padding: 0 2%;
         border: none;
         background-color: transparent;
         td {
@@ -225,7 +225,7 @@ body.section-front-page {
         margin-top: 4em;
     }
     img {
-        max-width: auto;
+        max-width: 100%;
         height: auto;
     }
     .plone-navbar-nav {
@@ -240,10 +240,37 @@ body.section-front-page {
         display: block;
         width: 100%;
     }
+    body.section-front-page {
+        h3 {
+            font-size: 3vw;
+        }
+    }
 }
-@media (max-width: @plone-screen-xs-min) {
+@media (max-width: 760px) {
+    #portal-header #portal-searchbox {
+        padding-top: 0;
+        width: 85%;
+        position: relative;
+        margin: 0.5em auto;
+    }
+    div#translate_widget {
+        position: relative;
+    }
+    #portal-breadcrumbs,
+    #sidebar,
+    #banner {
+        display: none;
+    }
+    #phone_banner {
+        display: inline;
+    }
+    #portal-header .portletStaticText {
+        margin-top: 0.5em;
+    }
     #portal-header #portal-logo {
         margin-top: 0;
+        width: 100%;
+        text-align: center;
     }
     .plone-navbar-nav {
         float: none;
@@ -251,26 +278,6 @@ body.section-front-page {
     }
     .plone-navbar-nav > li {
         float: none;
-        display: block;
-    }
-    #portal-breadcrumbs,
-    #sidebar,
-    #banner {
-        display: none;
-    }
-    div#translate_widget {
-        position: relative;
-    }
-    #portal-header #portal-searchbox {
-        padding-top: 0;
-        width: 85%;
-        position: relative;
-        margin: 0.5em auto;
-    }
-    #portal-header .portletStaticText {
-        margin-top: 0.5em;
-    }
-    #phone_banner {
         display: block;
     }
     h1, h2, h3, h4, h5, h6, .documentDescription {
@@ -284,5 +291,14 @@ body.section-front-page {
     }
     .actions-site_actions {
         text-align: center;
+    }
+    body.section-front-page #content-core #parent-fieldname-text > table {
+        width: 40%;
+        padding: 0 3%;
+    }
+    body.section-front-page {
+        h3 {
+            font-size: 5vw;
+        }
     }
 }
