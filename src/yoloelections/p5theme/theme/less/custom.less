@@ -40,6 +40,7 @@
 .portlet {
     border: 1px solid transparent;
     box-shadow: none;
+    text-align: left;
 }
 .portlet .portletHeader {
     background: @plone-body-bg;
@@ -55,11 +56,19 @@
     font-size: 12px;
     box-shadow: none;
 }
+.portlet nav.portletContent > ul > li a,
 .portlet li.portletItem {
     text-align: left;
 }
 ul.portletContent {
     list-style: none;
+}
+.portlet .portletContent > ul > li > a {
+    border-top: none;
+    padding: 10px 15px 0px 30px;
+}
+.portlet .portletContent > ul > li > a div {
+    font-weight: 400;
 }
 
 div#translate_widget {
@@ -204,7 +213,7 @@ body.section-front-page {
         .portletNavigationTree .portletHeader a:before {
             content: "\e806";
         }
-        .portletCollection .portletHeader a:before {
+        .portletNews .portletHeader a:before {
             content: "\e80f";
         }
     }
@@ -226,6 +235,10 @@ body.section-front-page {
     .plone-navbar-nav > li {
         float: none;
         display: inline-block;
+    }
+    body.section-front-page #portal-column-two .portletWrapper {
+        display: block;
+        width: 100%;
     }
 }
 @media (max-width: @plone-screen-xs-min) {
