@@ -22,53 +22,53 @@
 }
 
 
-.portlet .portletContent > ul > li a:before,
-.portlet a {
-    color: @ye_base;
-    font-weight: 500;
-}
-.portlet .portletContent > ul > li > a {
-    display: block;
-    background: @plone-body-bg;
-}
-.portlet .portletContent > ul > li > a:hover {
-    background: @plone-portlet-header-bg;
-}
-.portlet nav.portletContent > ul > li a {
-    border: 1px solid transparent;
-}
 .portlet {
     border: 1px solid transparent;
     box-shadow: none;
     text-align: left;
-}
-.portlet .portletHeader {
-    background: @plone-body-bg;
-}
-.portlet .portletContent {
-    font-size: 14px;
-    border-top: none;
-    background: transparent;
-}
-.portlet .portletFooter {
-    border-top: none;
-    background: transparent;
-    font-size: 12px;
-    box-shadow: none;
-}
-.portlet nav.portletContent > ul > li a,
-.portlet li.portletItem {
-    text-align: left;
+
+    .portletContent {
+        font-size: 14px;
+        border-top: none;
+        background: transparent;
+
+        > ul > li a:before,
+        a {
+            color: @ye_base;
+            font-weight: 500;
+        }
+        > ul > li > a {
+            display: block;
+            background: @plone-body-bg;
+            border-top: none;
+            padding: 10px 15px 0px 30px;
+        }
+        > ul > li > a:hover {
+            background: @plone-portlet-header-bg;
+        }
+        > ul > li > a div {
+            font-weight: 400;
+        }
+    }
+    nav.portletContent > ul > li a {
+        border: 1px solid transparent;
+    }
+    nav.portletContent > ul > li a,
+    li.portletItem {
+        text-align: left;
+    }
+    .portletHeader {
+        background: @plone-body-bg;
+    }
+    .portletFooter {
+        border-top: none;
+        background: transparent;
+        font-size: 12px;
+        box-shadow: none;
+    }
 }
 ul.portletContent {
     list-style: none;
-}
-.portlet .portletContent > ul > li > a {
-    border-top: none;
-    padding: 10px 15px 0px 30px;
-}
-.portlet .portletContent > ul > li > a div {
-    font-weight: 400;
 }
 
 div#translate_widget {
