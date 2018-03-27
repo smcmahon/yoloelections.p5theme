@@ -11,11 +11,12 @@
       layer="yoloelections.p5theme.interfaces.IYoloelectionsP5ThemeLayer"
       />
 
-  <!-- Publish static files -->
+  <!-- Publish static files
   <plone:static
       name="yoloelections.p5theme"
       type="plone"
       directory="static"
       />
+   -->
 
 </configure>
