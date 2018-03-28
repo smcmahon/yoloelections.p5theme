@@ -133,10 +133,18 @@
 <drop css:content=".portletActions" />
 
 <after css:content-children="body.section-front-page #content-core">
-    <div>
-        <xsl:copy-of select="//*[@id='portal-column-two']" />
+  <aside id="portal-column-two">
+    <div class="portletWrapper" id="quicklinks">
+        <xsl:copy-of select="//*[@id='portal-column-two']//aside[@class='portlet portletNavigationTree']" />
     </div>
+    <div class="portletWrapper" id="sitenews">
+        <xsl:copy-of select="//*[@id='portal-column-two']//aside[@class='portlet portletNews']" />
+    </div>
+  </aside>
 </after>
 
+<rules css:if-not-content="body.section-front-page">
+  <drop css:theme="#secondarynavigation" />
+</rules>
 
 </rules>
