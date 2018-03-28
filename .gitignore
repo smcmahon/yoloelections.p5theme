@@ -34,4 +34,4 @@ report.html
 !.travis.yml
 !src/yoloelections
 ._*
-
+.DS_Store
