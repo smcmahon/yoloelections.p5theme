@@ -137,6 +137,51 @@ div#translate_widget {
     display: none;
 }
 
+table {
+    color: @plone-gray-dark;
+}
+th {
+    color: @plone-gray-darker;
+}
+th, td {
+    font-family: @plone-font-family-sans-serif;
+}
+body.subsection-archives {
+    th, td {
+        padding: 2px;
+    }
+    td,
+    .update {
+        font-family: @plone-font-family-serif;
+    }
+    td {
+        font-size: ceil((@plone-font-size-base * 1.1));
+    }
+    th.btitle,
+    tfoot td,
+    tfoot th
+    td.vcount,
+    td.pct ,
+    td.precinct {
+        text-align: right;
+    }
+    .ctitle {
+        font-size: @plone-font-size-h3;
+    }
+    th.ptitle,
+    .ctitle,
+    table.nouter > thead > tr > th {
+        text-align: center;
+    }
+    table.nouter,
+    table.nouter > thead > tr > th,
+    table.nouter > tbody > tr > th,
+    table.nouter > tbody > tr > td {
+        border: none;
+    }
+}
+
+
 @media (min-width: 768px) {
     #portal-header {
         position: relative;
