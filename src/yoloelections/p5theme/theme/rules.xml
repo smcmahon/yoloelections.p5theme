@@ -143,6 +143,9 @@
   </aside>
 </after>
 
+<replace css:theme="span#ql-link" content="//*[@id='portal-column-two']//aside[@class='portlet portletNavigationTree']/header/a/text()" />
+<replace css:theme="span#news-link" content="//*[@id='portal-column-two']//aside[@class='portlet portletNews']/header/a/text()" />
+
 <rules css:if-not-content="body.section-front-page">
   <drop css:theme="#secondarynavigation" />
 </rules>
