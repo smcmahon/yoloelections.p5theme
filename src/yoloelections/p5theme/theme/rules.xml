@@ -147,4 +147,9 @@
   <drop css:theme="#secondarynavigation" />
 </rules>
 
+<rules css:if-content="body.userrole-anonymous">
+    <drop content="/html/head/link[@rel='stylesheet' and (@data-bundle='plone' or @data-bundle='plone-legacy') or @data-bundle='multilingual']" />
+/>
+</rules>
+
 </rules>
