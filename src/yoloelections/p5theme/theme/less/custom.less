@@ -223,7 +223,7 @@ body.section-front-page {
         border-top: 33px solid #424579;
         position: relative;
         left: -100%;
-        width: 300%;
+        width: 210%;
     }
     hr:nth-of-type(1) {
         border-color: #0e125c;
@@ -388,4 +388,39 @@ body.section-front-page #content-core #parent-fieldname-text > table {
         -webkit-transition-property: transform;
         transition-property: transform;
     }
+}
+
+@media print {
+
+  * {
+    text-shadow: none !important;
+    color: #000 !important; // Black prints faster: h5bp.com/s
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: "";
+  }
+
+  abbr[title]:after {
+    content: "";
+  }
+
+  #edit-zone,
+  #yolo-logo,
+  #mainnavigation-wrapper,
+  #site-actions,
+  .portlet-static-about-us-contact-us,
+  #footer-nav,
+  #category,
+  .relatedItems {
+    display: none;
+  }
+
 }
