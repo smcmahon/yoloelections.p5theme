@@ -104,24 +104,23 @@
 
 <drop css:content="#portal-anontools" />
 <drop css:content="div.searchSection" />
+
+<!-- Copy About Us footer portlet to search box -->
 <after css:content-children="#portal-searchbox">
     <xsl:copy-of select="//div[@class='portletStaticText portlet-static-about-us-contact-us']" />
 </after>
+
 <replace css:content="#portal-logo img">
     <img src="banner.png" id="banner" alt="Yolo Elections" width="692" height="121"><xsl:attribute name="src"><xsl:value-of select='$static_base_url' />banner.png</xsl:attribute></img>
     <img src="phone_banner.png" id="phone_banner" alt="Yolo Elections" width="333" height="164"><xsl:attribute name="src"><xsl:value-of select='$static_base_url' />phone_banner.png</xsl:attribute></img>
 </replace>
-<!-- before css:content="#portal-searchbox">
-    <div id="translate_widget"><div id="google_translate_element"></div><script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'ar,es,hi,ko,pa,ru,tl,zh-CN,zh-TW', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, multilanguagePage: true}, 'google_translate_element');
-    }
-    </script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script></div>
-</before -->
 
+<!-- Yolo County logo in footer -->
 <after content="//footer//div[@class='portletWrapper'][1]">
     <div id="yolo-logo"><img src="yolo_logo.png" alt="Yolo Elections" width="126" height="126"><xsl:attribute name="src"><xsl:value-of select='$static_base_url' />yolo_logo.png</xsl:attribute></img></div>
 </after>
+
+<!-- Copy global nav to footer -->
 <after content="//footer//div[@class='portletWrapper'][2]">
     <ul id="footer-nav">
         <xsl:for-each select="//ul[@id='portal-globalnav']/li">
@@ -129,9 +128,12 @@
         </xsl:for-each>
     </ul>
 </after>
+
+<!-- Move site actions -->
 <replace css:theme-children="#site-actions .row" css:content-children=".portletActions" method="raw" />
 <drop css:content=".portletActions" />
 
+<!-- Front page quick links and news -->
 <after css:content-children="body.section-front-page #content-core">
   <aside id="portal-column-two">
     <div class="portletWrapper" id="quicklinks">
@@ -142,17 +144,29 @@
     </div>
   </aside>
 </after>
-
 <replace css:theme="span#ql-link" content="//*[@id='portal-column-two']//aside[@class='portlet portletNavigationTree']/header/a/text()" />
 <replace css:theme="span#news-link" content="//*[@id='portal-column-two']//aside[@class='portlet portletNews']/header/a/text()" />
+
+<!-- Front page: Wrap sequences of tables in content area with divs. -->
+<before css:content-children="body.section-front-page #parent-fieldname-text" mode="raw">
+    <div>
+        <xsl:copy-of select="//div[@id='parent-fieldname-text']/hr[1]/preceding-sibling::table" />
+    </div>
+    <hr />
+    <div>
+        <xsl:copy-of select="//div[@id='parent-fieldname-text']/hr[1]/following-sibling::table" />
+    </div>
+    <hr />
+</before>
+<drop content="//div[@id='parent-fieldname-text']/*" />
 
 <rules css:if-not-content="body.section-front-page">
   <drop css:theme="#secondarynavigation" />
 </rules>
 
+<!-- Don't send edit interface css to anonymous -->
 <rules css:if-content="body.userrole-anonymous">
     <drop content="/html/head/link[@rel='stylesheet' and (@data-bundle='plone' or @data-bundle='plone-legacy') or @data-bundle='multilingual']" />
-/>
 </rules>
 
 </rules>
