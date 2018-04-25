@@ -148,17 +148,19 @@
 <replace css:theme="span#news-link" content="//*[@id='portal-column-two']//aside[@class='portlet portletNews']/header/a/text()" />
 
 <!-- Front page: Wrap sequences of tables in content area with divs. -->
-<before css:content-children="body.section-front-page #parent-fieldname-text" mode="raw">
-    <div>
-        <xsl:copy-of select="//div[@id='parent-fieldname-text']/hr[1]/preceding-sibling::table" />
-    </div>
-    <hr />
-    <div>
-        <xsl:copy-of select="//div[@id='parent-fieldname-text']/hr[1]/following-sibling::table" />
-    </div>
-    <hr />
-</before>
-<drop content="//div[@id='parent-fieldname-text']/*" />
+<rules css:if-content="body.section-front-page">
+    <before css:content-children="#parent-fieldname-text" mode="raw">
+        <div>
+            <xsl:copy-of select="//div[@id='parent-fieldname-text']/hr[1]/preceding-sibling::table" />
+        </div>
+        <hr />
+        <div>
+            <xsl:copy-of select="//div[@id='parent-fieldname-text']/hr[1]/following-sibling::table" />
+        </div>
+        <hr />
+    </before>
+    <drop content="div[@id='parent-fieldname-text']/*" />
+</rules>
 
 <rules css:if-not-content="body.section-front-page">
   <drop css:theme="#secondarynavigation" />
