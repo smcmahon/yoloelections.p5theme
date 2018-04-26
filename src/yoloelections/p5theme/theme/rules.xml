@@ -47,7 +47,7 @@
       <xsl:if test="not(//aside[@id='portal-column-one']) and not(//aside[@id='portal-column-two'])">col-xs-12 col-sm-12</xsl:if>
     </xsl:variable>
 
-    <div class="{$central}">
+    <div class="{$central}" id="central-content">
       <!-- <p class="pull-right visible-xs">
         <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
       </p> -->
@@ -133,20 +133,6 @@
 <replace css:theme-children="#site-actions .row" css:content-children=".portletActions" method="raw" />
 <drop css:content=".portletActions" />
 
-<!-- Front page quick links and news -->
-<after css:content-children="body.section-front-page #content-core">
-  <aside id="portal-column-two">
-    <div class="portletWrapper" id="quicklinks">
-        <xsl:copy-of select="//*[@id='portal-column-two']//aside[@class='portlet portletNavigationTree']" />
-    </div>
-    <div class="portletWrapper" id="sitenews">
-        <xsl:copy-of select="//*[@id='portal-column-two']//aside[@class='portlet portletNews']" />
-    </div>
-  </aside>
-</after>
-<replace css:theme="span#ql-link" content="//*[@id='portal-column-two']//aside[@class='portlet portletNavigationTree']/header/a/text()" />
-<replace css:theme="span#news-link" content="//*[@id='portal-column-two']//aside[@class='portlet portletNews']/header/a/text()" />
-
 <!-- Front page: Wrap sequences of tables in content area with divs. -->
 <rules css:if-content="body.section-front-page">
     <before css:content-children="#parent-fieldname-text" mode="raw">
@@ -160,10 +146,6 @@
         <hr />
     </before>
     <drop content="div[@id='parent-fieldname-text']/*" />
-</rules>
-
-<rules css:if-not-content="body.section-front-page">
-  <drop css:theme="#secondarynavigation" />
 </rules>
 
 <!-- Don't send edit interface css to anonymous -->
