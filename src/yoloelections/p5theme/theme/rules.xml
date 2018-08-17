@@ -137,15 +137,15 @@
 <after css:content-children="body.section-front-page #content-core">
   <aside id="portal-column-two">
     <div class="portletWrapper" id="quicklinks">
-        <xsl:copy-of select="//*[@id='portal-column-two']//aside[@class='portlet portletNavigationTree']" />
+        <xsl:copy-of select="//*[@id='portal-column-two']/div[1]/*" />
     </div>
     <div class="portletWrapper" id="sitenews">
-        <xsl:copy-of select="//*[@id='portal-column-two']//aside[@class='portlet portletNews']" />
+        <xsl:copy-of select="//*[@id='portal-column-two']/div[2]/*" />
     </div>
   </aside>
 </after>
-<replace css:theme="span#ql-link" content="//*[@id='portal-column-two']//aside[@class='portlet portletNavigationTree']/header/a/text()" />
-<replace css:theme="span#news-link" content="//*[@id='portal-column-two']//aside[@class='portlet portletNews']/header/a/text()" />
+<replace css:theme="span#ql-link" content="//*[@id='portal-column-two']/div[1]//header//text()" />
+<replace css:theme="span#news-link" content="//*[@id='portal-column-two']/div[2]//header//text()" />
 
 <!-- Front page: Wrap sequences of tables in content area with divs. -->
 <rules css:if-content="body.section-front-page">
