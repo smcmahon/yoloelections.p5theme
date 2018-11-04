@@ -160,6 +160,7 @@
         <hr />
     </before>
     <drop content="div[@id='parent-fieldname-text']/*" />
+    <replace css:theme-children="#secondarynavigation" css:content-children=".portlet-static-homepage-yellow-banner" />
 </rules>
 
 <rules css:if-not-content="body.section-front-page">
