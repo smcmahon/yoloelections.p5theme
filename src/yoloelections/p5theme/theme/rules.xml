@@ -147,8 +147,8 @@
 <replace css:theme="span#ql-link" content="//*[@id='portal-column-two']/div[1]//header//text()" />
 <replace css:theme="span#news-link" content="//*[@id='portal-column-two']/div[2]//header//text()" />
 
-<!-- Front page: Wrap sequences of tables in content area with divs. -->
 <rules css:if-content="body.section-front-page">
+<!--
     <before css:content-children="#parent-fieldname-text" mode="raw">
         <div>
             <xsl:copy-of select="//div[@id='parent-fieldname-text']/hr[1]/preceding-sibling::table" />
@@ -160,6 +160,7 @@
         <hr />
     </before>
     <drop content="div[@id='parent-fieldname-text']/*" />
+-->
     <replace css:theme-children="#secondarynavigation" css:content-children=".portlet-static-homepage-yellow-banner" />
 </rules>
 
