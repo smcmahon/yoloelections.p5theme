@@ -78,6 +78,11 @@
     </replace>
   </rules>
 
+  <!-- mobile subnav -->
+  <rules css:if-content=".portletNavigationTree">
+     <replace css:theme-children="#mobile-subnav" css:content=".portletNavigationTree .portletContent" />
+  </rules>
+
   <!-- Right column -->
   <rules css:if-not-content="body.section-front-page">
     <rules css:if-content="#portal-column-two">

@@ -1,5 +1,8 @@
 /* our custom styles */
 
+/* ANDI required contrast */
+@plone-link-color: #2356ef;
+
 /* TinyMCE templates */
 
 // image-grid-2x2:
@@ -182,6 +185,10 @@ body.subsection-archives {
     }
 }
 
+.section-front-page #mobile-subnav-container,
+#mobile-subnav-container {
+    display: none;
+}
 
 @media (min-width: 768px) {
     #portal-header {
@@ -405,6 +412,15 @@ div#secondarynavigation {
             font-size: 5vw;
         }
     }
+    #mobile-subnav-container {
+        display: block;
+    }
+    #mobile-subnav-container h3 {
+        margin-top: -24px;
+    }
+    .portlet nav.portletContent > ul > li a, .portlet li.portletItem {
+       font-size: 125%;
+    }
 }
 
 /* front page icon hover animation */
@@ -434,6 +450,10 @@ body.section-front-page #content-core #parent-fieldname-text > div > table {
 }
 .mce-content-body hr {
     outline: 6px solid #424579 !important;
+}
+
+.documentDescription {
+    color: #737373;
 }
 
 @media print {
