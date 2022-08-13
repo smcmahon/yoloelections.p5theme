@@ -1,12 +1,22 @@
 
 jQuery(function($) {
-    var sidebar = $('#sidebar'),
-        mobile = sidebar.css('display') === 'none',
-        yolo_logo = $('#yolo-logo');
-    if (mobile) {
-        sidebar.appendTo('#main-container')
-            .attr('class', 'col-xs-12')
-            .show();
-        yolo_logo.prependTo(yolo_logo.parent());
+    var backtop_button = $("#backtop-link");
+
+    if (backtop_button) {
+        $(window).scroll(function(event){
+            if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
+                backtop_button.show();
+            } else {
+                backtop_button.hide();
+            }
+        });
+
+        backtop_button.on('click', function( event ){
+            event.preventDefault();
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+            backtop_button.hide();
+        });
     }
 });
+
