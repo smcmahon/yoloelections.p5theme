@@ -26,11 +26,9 @@
     <after css:theme-children="head" css:content="head link" />
     <!-- Script -->
     <after css:theme-children="head" css:content="head script" />
-    <rules css:if-content=".pat-autotoc">
-      <after css:theme-children="head">
-        <script type="text/javascript"><xsl:attribute name="src"><xsl:value-of select='$static_base_url' />custom.js</xsl:attribute></script>
-      </after>
-    </rules>
+    <after css:theme-children="head">
+        <script type="text/javascript"><xsl:attribute name="src"><xsl:value-of select='$static_base_url' />custom.js?v=1</xsl:attribute></script>
+    </after>
   </rules>
 
   <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
@@ -181,14 +179,6 @@
 <!-- Don't send edit interface css to anonymous -->
 <rules css:if-content="body.userrole-anonymous">
     <drop content="/html/head/link[@rel='stylesheet' and (@data-bundle='plone' or @data-bundle='plone-legacy') or @data-bundle='multilingual']" />
-</rules>
-
-<rules css:if-content=".pat-autotoc">
-  <after css:theme-children="body">
-    <a id="backtop-link" href="#parent-fieldname-text">
-      Back to Top
-    </a>
-  </after>
 </rules>
 
 </rules>

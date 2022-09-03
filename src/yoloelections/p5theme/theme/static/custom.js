@@ -2,7 +2,7 @@
 jQuery(function($) {
     var backtop_button = $("#backtop-link");
 
-    if (backtop_button) {
+    if (backtop_button && ($(document).height() > 2 * window.innerHeight)) {
         $(window).scroll(function(event){
             if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
                 backtop_button.show();
